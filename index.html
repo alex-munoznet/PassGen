@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Password Generator</title>
+</head>
+<body>
+  <input type="text" placeholder="Enter length of password" id="input">
+  <input type="button" value="Submit" onclick="password()">
+  <p id="output"></p>
+
+  <script type="text/javascript">
+  function password() {
+    var inputLength = document.getElementById('input').value;
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*();:[]{}";
+
+    for( var i=0; i < inputLength; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    document.getElementById('output').innerHTML = text;
+  }
+  </script>
+</body>
+</html>
